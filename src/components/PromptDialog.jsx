@@ -1,0 +1,117 @@
+import { Copy, Paperclip, Star } from 'lucide-react'
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import PromptImage from '@/components/PromptImage'
+import { PREMIUM_URL, LOREM } from '@/data/prompts'
+import { cn } from '@/lib/utils'
+
+function PromptDialog({ prompt, open, onOpenChange, onCopy }) {
+  if (!prompt) return null
+  const isPremium = Boolean(prompt.premium)
+
+  const openPremium = () => {
+    if (PREMIUM_URL && PREMIUM_URL !== '#') {
+      window.open(PREMIUM_URL, '_blank', 'noopener,noreferrer')
+    }
+  }
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-h-[90vh] gap-0 overflow-y-auto p-0 sm:max-w-3xl">
+        <div className="grid gap-0 sm:grid-cols-2">
+          <div className="aspect-[3/4] overflow-hidden bg-muted sm:aspect-auto">
+            <PromptImage src={prompt.image} alt={prompt.title} />
+          </div>
+          <div className="flex flex-col p-6">
+            <DialogHeader className="space-y-3 text-left">
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge variant="secondary" className="w-fit">
+                  {prompt.category}
+                </Badge>
+                {isPremium && (
+                  <span className="flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/15 px-2 py-0.5 text-xs font-medium text-amber-500">
+                    <Star className="h-3 w-3 fill-current" />
+                    Premium
+                  </span>
+                )}
+              </div>
+              <DialogTitle className="text-2xl">{prompt.title}</DialogTitle>
+            </DialogHeader>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {prompt.tags.map((tag) => (
+                <Badge key={tag} variant="outline" className="font-normal">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+            <div className="relative mt-4">
+              <p
+                className={cn(
+                  'whitespace-pre-wrap text-sm leading-relaxed text-muted-foreground',
+                  isPremium && 'select-none blur-sm',
+                )}
+              >
+                {isPremium ? LOREM : prompt.prompt}
+              </p>
+              {isPremium && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/15 px-3 py-1 text-sm font-medium text-amber-500 backdrop-blur-sm">
+                    <Star className="h-4 w-4 fill-current" />
+                    Conteúdo Premium
+                  </span>
+                </div>
+              )}
+            </div>
+
+            {prompt.attachments?.length > 0 && (
+              <div className="mt-5">
+                <div className="flex items-center gap-2 text-sm font-medium">
+                  <Paperclip className="h-4 w-4 text-primary" />
+                  Imagens de referência necessárias
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Anexe {prompt.attachments.length === 1 ? 'esta imagem' : 'estas imagens'} junto com o prompt na sua ferramenta de IA.
+                </p>
+                <div className="mt-3 grid grid-cols-3 gap-2">
+                  {prompt.attachments.map((att) => (
+                    <div
+                      key={att.id}
+                      className="aspect-square overflow-hidden rounded-lg border border-border bg-muted"
+                    >
+                      <div className={cn('h-full w-full', isPremium && 'select-none blur-sm')}>
+                        <PromptImage src={att.image} alt={att.alt} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {isPremium ? (
+              <Button
+                className="mt-6 gap-2 bg-amber-500 text-amber-950 hover:bg-amber-400"
+                onClick={openPremium}
+              >
+                <Star className="h-4 w-4 fill-current" />
+                Premium
+              </Button>
+            ) : (
+              <Button className="mt-6 gap-2" onClick={() => onCopy(prompt.prompt)}>
+                <Copy className="h-4 w-4" />
+                Copiar Prompt
+              </Button>
+            )}
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  )
+}
+
+export default PromptDialog
