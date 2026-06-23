@@ -1,19 +1,35 @@
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'motion/react'
-import { Copy, Eye, Paperclip, Sparkles, Star } from 'lucide-react'
+import { Copy, Eye, Lock, LogIn, Paperclip, Sparkles, Star } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import PromptImage from '@/components/PromptImage'
-import { PREMIUM_URL, LOREM } from '@/data/prompts'
+import { LOREM } from '@/data/prompts'
+import { useAuth } from '@/context/AuthContext'
+import { usePlans } from '@/context/PlansContext'
+import { getLockReason } from '@/lib/access'
 import { cn } from '@/lib/utils'
 
 function PromptCard({ prompt, index = 0, onView, onCopy }) {
+  const { user, profile } = useAuth()
+  const { openPlans } = usePlans()
+  const navigate = useNavigate()
   const isPremium = Boolean(prompt.premium)
+  const lock = getLockReason(prompt, { user, profile })
+  const locked = Boolean(lock)
 
-  const openPremium = (e) => {
+  const goToPlans = (e) => {
     e.stopPropagation()
-    if (PREMIUM_URL && PREMIUM_URL !== '#') {
-      window.open(PREMIUM_URL, '_blank', 'noopener,noreferrer')
+    if (!user) {
+      navigate('/login')
+      return
     }
+    openPlans()
+  }
+
+  const goToLogin = (e) => {
+    e.stopPropagation()
+    navigate('/login')
   }
 
   return (
@@ -35,6 +51,11 @@ function PromptCard({ prompt, index = 0, onView, onCopy }) {
           <div className="absolute right-3 top-3 flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/15 px-2 py-1 text-xs font-medium text-amber-500 backdrop-blur-md">
             <Star className="h-3 w-3 fill-current" />
             Premium
+          </div>
+        ) : prompt.requiresLogin ? (
+          <div className="absolute right-3 top-3 flex items-center gap-1 rounded-full border border-border bg-background/60 px-2 py-1 text-xs font-medium text-foreground backdrop-blur-md">
+            <Lock className="h-3 w-3 text-primary" />
+            Login
           </div>
         ) : (
           <div className="absolute right-3 top-3 rounded-full bg-background/60 p-1.5 backdrop-blur-md">
@@ -66,20 +87,25 @@ function PromptCard({ prompt, index = 0, onView, onCopy }) {
         <p
           className={cn(
             'line-clamp-2 text-sm text-muted-foreground',
-            isPremium && 'select-none blur-sm',
+            locked && 'select-none blur-sm',
           )}
         >
-          {isPremium ? LOREM : prompt.prompt}
+          {locked ? LOREM : prompt.prompt}
         </p>
 
         <div className="mt-auto flex gap-2 pt-1">
-          {isPremium ? (
+          {lock === 'premium' ? (
             <Button
               className="flex-1 gap-2 bg-amber-500 text-amber-950 hover:bg-amber-400"
-              onClick={openPremium}
+              onClick={goToPlans}
             >
               <Star className="h-4 w-4 fill-current" />
               Premium
+            </Button>
+          ) : lock === 'login' ? (
+            <Button className="flex-1 gap-2" onClick={goToLogin}>
+              <LogIn className="h-4 w-4" />
+              Entrar para ver
             </Button>
           ) : (
             <Button

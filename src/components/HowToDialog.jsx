@@ -17,12 +17,12 @@ const steps = [
   'Cole o prompt na sua ferramenta de IA (Midjourney, DALL·E, etc.) e ajuste proporção e estilo.',
 ]
 
-function HowToDialog() {
+function HowToDialog({ size = 'sm', className }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" size="sm" className="gap-2">
-          <HelpCircle className="h-4 w-4" />
+        <Button variant="outline" size={size} className={className}>
+          <HelpCircle className="h-5 w-5" />
           Como usar
         </Button>
       </DialogTrigger>

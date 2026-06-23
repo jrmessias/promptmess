@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowLeft, Eye, EyeOff } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+import { ArrowLeft, Eye, EyeOff, Loader2, MailCheck } from 'lucide-react'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Logo from '@/components/Logo'
 import Wordmark from '@/components/Wordmark'
+import { useAuth } from '@/context/AuthContext'
 
 function GoogleIcon(props) {
   return (
@@ -32,15 +33,45 @@ function GoogleIcon(props) {
 
 function Signup() {
   const [showPassword, setShowPassword] = useState(false)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+  const [sent, setSent] = useState(false)
+  const { signUp, signInWithGoogle, isConfigured } = useAuth()
+  const navigate = useNavigate()
 
-  const soon = () =>
-    toast.info('Em breve', {
-      description: 'O cadastro ainda não está disponível nesta versão.',
+  function notConfigured() {
+    toast.error('Supabase não configurado', {
+      description: 'Defina as chaves no arquivo .env. Veja o SUPABASE_SETUP.md.',
     })
+  }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    soon()
+    if (!isConfigured) return notConfigured()
+    setSubmitting(true)
+    const { data, error } = await signUp(email, password, name)
+    setSubmitting(false)
+    if (error) {
+      toast.error('Não foi possível criar a conta', { description: error.message })
+      return
+    }
+    // Se a confirmação por e-mail estiver ativa, não há sessão imediata.
+    if (data.session) {
+      toast.success('Conta criada!')
+      navigate('/')
+    } else {
+      setSent(true)
+    }
+  }
+
+  async function handleGoogle() {
+    if (!isConfigured) return notConfigured()
+    const { error } = await signInWithGoogle()
+    if (error) {
+      toast.error('Erro ao entrar com Google', { description: error.message })
+    }
   }
 
   return (
@@ -60,6 +91,23 @@ function Signup() {
         </Link>
 
         <div className="rounded-2xl border border-border bg-card/80 p-8 shadow-[var(--shadow-glow)] backdrop-blur">
+          {sent ? (
+            <div className="flex flex-col items-center text-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/15 text-primary ring-1 ring-primary/30">
+                <MailCheck className="h-7 w-7" />
+              </div>
+              <h1 className="mt-4 text-2xl font-bold">Confirme seu e-mail</h1>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Enviamos um link de confirmação para{' '}
+                <span className="font-medium text-foreground">{email}</span>. Confirme para ativar
+                sua conta e entrar.
+              </p>
+              <Button asChild className="mt-6 h-11 w-full">
+                <Link to="/login">Ir para o login</Link>
+              </Button>
+            </div>
+          ) : (
+          <>
           <div className="flex flex-col items-center text-center">
             <Logo className="h-14 w-14 rounded-2xl ring-1 ring-primary/30" />
             <h1 className="mt-4 text-2xl font-bold">
@@ -74,7 +122,7 @@ function Signup() {
             type="button"
             variant="outline"
             className="mt-6 h-11 w-full gap-2"
-            onClick={soon}
+            onClick={handleGoogle}
           >
             <GoogleIcon className="size-5" />
             Continuar com Google
@@ -97,6 +145,8 @@ function Signup() {
                 required
                 autoComplete="name"
                 placeholder="Seu nome"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="h-11"
               />
             </div>
@@ -111,6 +161,8 @@ function Signup() {
                 required
                 autoComplete="email"
                 placeholder="voce@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="h-11"
               />
             </div>
@@ -127,6 +179,8 @@ function Signup() {
                   minLength={8}
                   autoComplete="new-password"
                   placeholder="Mínimo de 8 caracteres"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="h-11 pr-10"
                 />
                 <button
@@ -140,7 +194,8 @@ function Signup() {
               </div>
             </div>
 
-            <Button type="submit" className="h-11 w-full">
+            <Button type="submit" className="h-11 w-full gap-2" disabled={submitting}>
+              {submitting && <Loader2 className="h-4 w-4 animate-spin" />}
               Criar conta
             </Button>
           </form>
@@ -163,6 +218,8 @@ function Signup() {
               Entrar
             </Link>
           </p>
+          </>
+          )}
         </div>
       </div>
     </div>

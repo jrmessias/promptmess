@@ -1,4 +1,5 @@
-import { Copy, Paperclip, Star } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { Copy, Lock, LogIn, Paperclip, Star } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -8,17 +9,33 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import PromptImage from '@/components/PromptImage'
-import { PREMIUM_URL, LOREM } from '@/data/prompts'
+import { LOREM } from '@/data/prompts'
+import { useAuth } from '@/context/AuthContext'
+import { usePlans } from '@/context/PlansContext'
+import { getLockReason } from '@/lib/access'
 import { cn } from '@/lib/utils'
 
 function PromptDialog({ prompt, open, onOpenChange, onCopy }) {
+  const { user, profile } = useAuth()
+  const { openPlans } = usePlans()
+  const navigate = useNavigate()
   if (!prompt) return null
   const isPremium = Boolean(prompt.premium)
+  const lock = getLockReason(prompt, { user, profile })
+  const locked = Boolean(lock)
 
-  const openPremium = () => {
-    if (PREMIUM_URL && PREMIUM_URL !== '#') {
-      window.open(PREMIUM_URL, '_blank', 'noopener,noreferrer')
+  const goToPlans = () => {
+    onOpenChange(false)
+    if (!user) {
+      navigate('/login')
+      return
     }
+    openPlans()
+  }
+
+  const goToLogin = () => {
+    onOpenChange(false)
+    navigate('/login')
   }
 
   return (
@@ -34,12 +51,17 @@ function PromptDialog({ prompt, open, onOpenChange, onCopy }) {
                 <Badge variant="secondary" className="w-fit">
                   {prompt.category}
                 </Badge>
-                {isPremium && (
+                {isPremium ? (
                   <span className="flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/15 px-2 py-0.5 text-xs font-medium text-amber-500">
                     <Star className="h-3 w-3 fill-current" />
                     Premium
                   </span>
-                )}
+                ) : prompt.requiresLogin ? (
+                  <span className="flex items-center gap-1 rounded-full border border-border px-2 py-0.5 text-xs font-medium text-foreground">
+                    <Lock className="h-3 w-3 text-primary" />
+                    Login
+                  </span>
+                ) : null}
               </div>
               <DialogTitle className="text-2xl">{prompt.title}</DialogTitle>
             </DialogHeader>
@@ -54,16 +76,24 @@ function PromptDialog({ prompt, open, onOpenChange, onCopy }) {
               <p
                 className={cn(
                   'whitespace-pre-wrap text-sm leading-relaxed text-muted-foreground',
-                  isPremium && 'select-none blur-sm',
+                  locked && 'select-none blur-sm',
                 )}
               >
-                {isPremium ? LOREM : prompt.prompt}
+                {locked ? LOREM : prompt.prompt}
               </p>
-              {isPremium && (
+              {lock === 'premium' && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/15 px-3 py-1 text-sm font-medium text-amber-500 backdrop-blur-sm">
                     <Star className="h-4 w-4 fill-current" />
                     Conteúdo Premium
+                  </span>
+                </div>
+              )}
+              {lock === 'login' && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="flex items-center gap-1.5 rounded-full border border-border bg-background/70 px-3 py-1 text-sm font-medium text-foreground backdrop-blur-sm">
+                    <Lock className="h-4 w-4 text-primary" />
+                    Entre para ver
                   </span>
                 </div>
               )}
@@ -84,7 +114,7 @@ function PromptDialog({ prompt, open, onOpenChange, onCopy }) {
                       key={att.id}
                       className="aspect-square overflow-hidden rounded-lg border border-border bg-muted"
                     >
-                      <div className={cn('h-full w-full', isPremium && 'select-none blur-sm')}>
+                      <div className={cn('h-full w-full', locked && 'select-none blur-sm')}>
                         <PromptImage src={att.image} alt={att.alt} />
                       </div>
                     </div>
@@ -93,13 +123,18 @@ function PromptDialog({ prompt, open, onOpenChange, onCopy }) {
               </div>
             )}
 
-            {isPremium ? (
+            {lock === 'premium' ? (
               <Button
                 className="mt-6 gap-2 bg-amber-500 text-amber-950 hover:bg-amber-400"
-                onClick={openPremium}
+                onClick={goToPlans}
               >
                 <Star className="h-4 w-4 fill-current" />
                 Premium
+              </Button>
+            ) : lock === 'login' ? (
+              <Button className="mt-6 gap-2" onClick={goToLogin}>
+                <LogIn className="h-4 w-4" />
+                Entrar para ver
               </Button>
             ) : (
               <Button className="mt-6 gap-2" onClick={() => onCopy(prompt.prompt)}>

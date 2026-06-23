@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowLeft, Eye, EyeOff } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+import { ArrowLeft, Eye, EyeOff, Loader2 } from 'lucide-react'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Logo from '@/components/Logo'
 import Wordmark from '@/components/Wordmark'
+import { useAuth } from '@/context/AuthContext'
 
 function GoogleIcon(props) {
   return (
@@ -32,15 +33,38 @@ function GoogleIcon(props) {
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+  const { signIn, signInWithGoogle, isConfigured } = useAuth()
+  const navigate = useNavigate()
 
-  const soon = () =>
-    toast.info('Em breve', {
-      description: 'A autenticação ainda não está disponível nesta versão.',
+  function notConfigured() {
+    toast.error('Supabase não configurado', {
+      description: 'Defina as chaves no arquivo .env. Veja o SUPABASE_SETUP.md.',
     })
+  }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    soon()
+    if (!isConfigured) return notConfigured()
+    setSubmitting(true)
+    const { error } = await signIn(email, password)
+    setSubmitting(false)
+    if (error) {
+      toast.error('Não foi possível entrar', { description: error.message })
+      return
+    }
+    toast.success('Bem-vindo de volta!')
+    navigate('/')
+  }
+
+  async function handleGoogle() {
+    if (!isConfigured) return notConfigured()
+    const { error } = await signInWithGoogle()
+    if (error) {
+      toast.error('Erro ao entrar com Google', { description: error.message })
+    }
   }
 
   return (
@@ -74,7 +98,7 @@ function Login() {
             type="button"
             variant="outline"
             className="mt-6 h-11 w-full gap-2"
-            onClick={soon}
+            onClick={handleGoogle}
           >
             <GoogleIcon className="size-5" />
             Continuar com Google
@@ -97,6 +121,8 @@ function Login() {
                 required
                 autoComplete="email"
                 placeholder="voce@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="h-11"
               />
             </div>
@@ -120,6 +146,8 @@ function Login() {
                   required
                   autoComplete="current-password"
                   placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="h-11 pr-10"
                 />
                 <button
@@ -133,7 +161,8 @@ function Login() {
               </div>
             </div>
 
-            <Button type="submit" className="h-11 w-full">
+            <Button type="submit" className="h-11 w-full gap-2" disabled={submitting}>
+              {submitting && <Loader2 className="h-4 w-4 animate-spin" />}
               Entrar
             </Button>
           </form>

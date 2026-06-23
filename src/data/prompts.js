@@ -1,11 +1,16 @@
 // Dados de exemplo (placeholder). Substitua `image` pela URL/caminho da sua imagem.
 // Cada item: { id, title, image, category, tags[], prompt }
-// Prompts pagos: adicione `premium: true` ao item. Sem o campo = gratuito.
+//
+// Níveis de acesso (sem nenhum campo = grátis e público):
+//  - `premium: true`     → só usuário logado E premium vê o texto.
+//  - `requiresLogin: true` → só usuário logado (qualquer plano) vê o texto.
 //
 // ATENÇÃO: este é um site estático — todo texto deste arquivo é enviado ao
 // navegador e fica visível no dev console. NÃO coloque o texto real de prompts
 // premium aqui. Deixe `prompt: ""` nos premium; a interface exibe um lorem
 // ipsum no lugar. Entregue o conteúdo real ao cliente por outro meio.
+// Nos itens `requiresLogin`, o texto real PODE ficar aqui (o bloqueio é apenas
+// um incentivo ao cadastro, não proteção de conteúdo).
 
 // TODO: trocar pelo link real de compra/assinatura
 export const PREMIUM_URL = "#"
@@ -67,6 +72,7 @@ export const prompts = [
   },
   {
     "id": 3,
+    "requiresLogin": true,
     "title": "Sessão ao Ar Livre Vibrante",
     "category": "Ensaio Fotográfico",
     "tags": [

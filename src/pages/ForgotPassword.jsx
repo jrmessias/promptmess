@@ -1,17 +1,34 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, MailCheck } from 'lucide-react'
+import { ArrowLeft, Loader2, MailCheck } from 'lucide-react'
+import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Logo from '@/components/Logo'
 import Wordmark from '@/components/Wordmark'
+import { useAuth } from '@/context/AuthContext'
 
 function ForgotPassword() {
   const [email, setEmail] = useState('')
   const [sent, setSent] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const { resetPassword, isConfigured } = useAuth()
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
+    if (!isConfigured) {
+      toast.error('Supabase não configurado', {
+        description: 'Defina as chaves no arquivo .env. Veja o SUPABASE_SETUP.md.',
+      })
+      return
+    }
+    setSubmitting(true)
+    const { error } = await resetPassword(email)
+    setSubmitting(false)
+    if (error) {
+      toast.error('Não foi possível enviar o e-mail', { description: error.message })
+      return
+    }
     setSent(true)
   }
 
@@ -82,7 +99,8 @@ function ForgotPassword() {
                   />
                 </div>
 
-                <Button type="submit" className="h-11 w-full">
+                <Button type="submit" className="h-11 w-full gap-2" disabled={submitting}>
+                  {submitting && <Loader2 className="h-4 w-4 animate-spin" />}
                   Enviar link de recuperação
                 </Button>
               </form>

@@ -13,6 +13,11 @@ docs
 dist-ssr
 *.local
 
+# Variáveis de ambiente (mantém apenas o .env.example versionado)
+.env
+.env.*
+!.env.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -23,3 +28,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Credentials
+*.apps.googleusercontent.com.json
