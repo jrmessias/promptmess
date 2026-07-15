@@ -10,10 +10,11 @@ import {
 import { Button } from '@/components/ui/button'
 
 const steps = [
-  'Navegue pela galeria e use a busca, as tags ou os filtros Grátis/Premium para encontrar o estilo desejado.',
+  'Navegue pela galeria e use a busca, as tags ou os filtros para encontrar o estilo desejado.',
   'Clique em um card para ver a imagem de referência e os detalhes do prompt.',
-  'Nos prompts gratuitos, use "Copiar Prompt" para copiar o texto completo.',
-  'Os prompts marcados com ⭐ Premium são desbloqueados pelo botão Premium.',
+  'Nos prompts, use "Copiar Prompt" para copiar o texto completo.',
+  'Altere as informações entre [ ] (colchetes) para personalizar o seu prompt.',
+  // 'Os prompts marcados com ⭐ Premium são desbloqueados pelo botão Premium.',
   'Cole o prompt na sua ferramenta de IA (Midjourney, DALL·E, etc.) e ajuste proporção e estilo.',
 ]
 

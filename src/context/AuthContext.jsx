@@ -16,13 +16,34 @@ export function AuthProvider({ children }) {
       setProfile(null)
       return
     }
-    const { data } = await supabase
+    const columns =
+      'id, email, full_name, is_premium, created_at, plan, subscription_started_at, subscription_ends_at'
+
+    let { data } = await supabase
       .from('profiles')
-      .select(
-        'id, email, full_name, is_premium, created_at, plan, subscription_started_at, subscription_ends_at',
-      )
+      .select(columns)
       .eq('id', currentUser.id)
       .maybeSingle()
+
+    // Auto-cura: se o trigger do banco não criou o perfil, cria a partir dos
+    // metadados do auth para garantir que os dados do usuário sejam gravados.
+    if (!data) {
+      const meta = currentUser.user_metadata ?? {}
+      await supabase.from('profiles').upsert(
+        {
+          id: currentUser.id,
+          email: currentUser.email,
+          full_name: meta.full_name ?? meta.name ?? null,
+        },
+        { onConflict: 'id', ignoreDuplicates: true },
+      )
+      ;({ data } = await supabase
+        .from('profiles')
+        .select(columns)
+        .eq('id', currentUser.id)
+        .maybeSingle())
+    }
+
     setProfile(data ?? null)
   }, [])
 

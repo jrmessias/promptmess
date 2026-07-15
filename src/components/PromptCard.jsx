@@ -4,11 +4,9 @@ import { Copy, Eye, Lock, LogIn, Paperclip, Sparkles, Star } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import PromptImage from '@/components/PromptImage'
-import { LOREM } from '@/data/prompts'
 import { useAuth } from '@/context/AuthContext'
 import { usePlans } from '@/context/PlansContext'
 import { getLockReason } from '@/lib/access'
-import { cn } from '@/lib/utils'
 
 function PromptCard({ prompt, index = 0, onView, onCopy }) {
   const { user, profile } = useAuth()
@@ -16,7 +14,6 @@ function PromptCard({ prompt, index = 0, onView, onCopy }) {
   const navigate = useNavigate()
   const isPremium = Boolean(prompt.premium)
   const lock = getLockReason(prompt, { user, profile })
-  const locked = Boolean(lock)
 
   const goToPlans = (e) => {
     e.stopPropagation()
@@ -32,6 +29,18 @@ function PromptCard({ prompt, index = 0, onView, onCopy }) {
     navigate('/login')
   }
 
+  const handleView = () => {
+    if (lock) {
+      if (lock === 'premium' && user) {
+        openPlans()
+        return
+      }
+      navigate('/login')
+      return
+    }
+    onView(prompt)
+  }
+
   return (
     <motion.article
       layout
@@ -40,13 +49,13 @@ function PromptCard({ prompt, index = 0, onView, onCopy }) {
       transition={{ duration: 0.35, delay: Math.min(index * 0.03, 0.4), ease: 'easeOut' }}
       whileHover={{ y: -6 }}
       className="group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors duration-300 hover:border-primary/50 hover:shadow-[var(--shadow-glow)]"
-      onClick={() => onView(prompt)}
+      onClick={handleView}
     >
-      <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+      <div className="relative aspect-[5/6] overflow-hidden bg-muted">
         <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
           <PromptImage src={prompt.image} alt={prompt.title} />
         </div>
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent opacity-80" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-card via-card/70 to-transparent" />
         {isPremium ? (
           <div className="absolute right-3 top-3 flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/15 px-2 py-1 text-xs font-medium text-amber-500 backdrop-blur-md">
             <Star className="h-3 w-3 fill-current" />
@@ -82,17 +91,6 @@ function PromptCard({ prompt, index = 0, onView, onCopy }) {
           ))}
         </div>
 
-        <h3 className="font-semibold leading-snug">{prompt.title}</h3>
-
-        <p
-          className={cn(
-            'line-clamp-2 text-sm text-muted-foreground',
-            locked && 'select-none blur-sm',
-          )}
-        >
-          {locked ? LOREM : prompt.prompt}
-        </p>
-
         <div className="mt-auto flex gap-2 pt-1">
           {lock === 'premium' ? (
             <Button
@@ -119,17 +117,19 @@ function PromptCard({ prompt, index = 0, onView, onCopy }) {
               Copiar Prompt
             </Button>
           )}
-          <Button
-            variant="outline"
-            size="icon"
-            aria-label="Visualizar prompt"
-            onClick={(e) => {
-              e.stopPropagation()
-              onView(prompt)
-            }}
-          >
-            <Eye className="h-4 w-4" />
-          </Button>
+          {!lock && (
+            <Button
+              variant="outline"
+              size="icon"
+              aria-label="Visualizar prompt"
+              onClick={(e) => {
+                e.stopPropagation()
+                onView(prompt)
+              }}
+            >
+              <Eye className="h-4 w-4" />
+            </Button>
+          )}
         </div>
       </div>
     </motion.article>
