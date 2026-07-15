@@ -7,8 +7,10 @@ import TagFilter from '@/components/TagFilter'
 import AccessFilter from '@/components/AccessFilter'
 import PromptCard from '@/components/PromptCard'
 import PromptDialog from '@/components/PromptDialog'
+import ContactDialog from '@/components/ContactDialog'
 import Pagination from '@/components/Pagination'
 import { categories, prompts } from '@/data/prompts'
+import Wordmark from "@/components/Wordmark.jsx";
 
 const PAGE_SIZE = 40
 
@@ -103,7 +105,7 @@ function Home() {
         <SearchBar value={query} onChange={handleSearch} />
 
         <div className="mt-6 flex flex-col gap-3">
-          <AccessFilter active={access} onChange={handleAccess} />
+          {/* <AccessFilter active={access} onChange={handleAccess} /> */}
           <TagFilter categories={categories} active={activeTag} onChange={handleTag} />
         </div>
 
@@ -138,16 +140,20 @@ function Home() {
 
       <footer className="mt-16 border-t border-border/60">
         <div className="container mx-auto flex flex-col items-center gap-1 px-4 py-8 text-center text-sm text-muted-foreground">
-          <p>promptmess — Galeria de prompts de imagem para IA</p>
+          <p><Wordmark /> — Galeria de prompts de imagem para IA</p>
           <div className="flex gap-4">
+            <p className="opacity-70">© 2026 <Wordmark /></p>
+            -
             <Link to="/termos" className="transition-colors hover:text-foreground">
               Termos de Uso
             </Link>
+             -
             <Link to="/privacidade" className="transition-colors hover:text-foreground">
               Política de Privacidade
             </Link>
+             -
+            <ContactDialog />
           </div>
-          <p className="text-xs opacity-70">Conteúdo de exemplo — adicione suas imagens e prompts.</p>
         </div>
       </footer>
 

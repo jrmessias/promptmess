@@ -11,7 +11,9 @@ import { usePlans } from '@/context/PlansContext'
 function Header() {
   const { user, profile, signOut } = useAuth()
   const { openPlans } = usePlans()
-  const displayName = profile?.full_name || user?.email
+  const displayName = profile?.full_name
+    ? `${profile.full_name} (${user?.email})`
+    : user?.email
 
   async function handleSignOut() {
     await signOut()
@@ -22,13 +24,13 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-md">
       <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-8 sm:py-10">
         <div className="flex items-center gap-4">
-          <Logo className="h-14 w-14 shrink-0 rounded-2xl ring-1 ring-primary/30" />
+          {/*<Logo className="h-14 w-14 shrink-0 rounded-2xl ring-1 ring-primary/30" />*/}
           <div className="min-w-0">
             <h1 className="text-2xl font-bold leading-tight sm:text-4xl">
               <Wordmark />
             </h1>
             <p className="hidden text-base text-muted-foreground sm:block">
-              Prompts prontos para gerar imagens com IA — grátis e premium
+              Prompts prontos para gerar imagens com IA
             </p>
           </div>
         </div>
@@ -53,24 +55,24 @@ function Header() {
                 Planos
               </Button>
             )}
-            {user ? (
-              <Button
-                size="lg"
-                variant="outline"
-                className="h-11 gap-2 px-5 text-base"
-                onClick={handleSignOut}
-              >
-                <LogOut className="h-5 w-5" />
-                Sair
-              </Button>
-            ) : (
-              <Button asChild size="lg" className="h-11 gap-2 px-5 text-base">
-                <Link to="/login">
-                  <LogIn className="h-5 w-5" />
-                  Entrar
-                </Link>
-              </Button>
-            )}
+            {/*{user ? (*/}
+            {/*  <Button*/}
+            {/*    size="lg"*/}
+            {/*    variant="outline"*/}
+            {/*    className="h-11 gap-2 px-5 text-base"*/}
+            {/*    onClick={handleSignOut}*/}
+            {/*  >*/}
+            {/*    <LogOut className="h-5 w-5" />*/}
+            {/*    Sair*/}
+            {/*  </Button>*/}
+            {/*) : (*/}
+            {/*  <Button asChild size="lg" className="h-11 gap-2 px-5 text-base">*/}
+            {/*    <Link to="/login">*/}
+            {/*      <LogIn className="h-5 w-5" />*/}
+            {/*      Entrar*/}
+            {/*    </Link>*/}
+            {/*  </Button>*/}
+            {/*)}*/}
             <HowToDialog size="lg" className="h-11 gap-2 px-5 text-base" />
           </div>
         </div>

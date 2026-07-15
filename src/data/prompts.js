@@ -19,151 +19,134 @@ export const PREMIUM_URL = "#"
 export const LOREM =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. --ar 3:4 --style raw"
 
-export const categories = [
-  "Todos",
-  "Masculino",
-  "Feminino",
-  "Ensaio Fotográfico",
-  "Ultrarrealista",
-  "Crianças Heróis",
-  "Lanches",
-  "Anúncios"
-]
-
 export const prompts = [
   {
     "id": 1,
-    "premium": true,
-    "title": "Executivo de Terno Minimalista",
-    "category": "Masculino",
+    "premium": false,
+    "title": "Mulher e cavalo",
+    "category": "Feminino",
     "tags": [
-      "retrato",
+      "animal",
       "preto e branco",
-      "produto"
     ],
-    "prompt": "",
-    "image": "/imagens/capas/prompt-1.jpg",
+    "prompt": "Crie um retrato em 8K ultra-realista, em preto e branco cinematográfico, com estética editorial fine art minimalista e atmosfera intensa, melancólica e sofisticada. Estou sentada exatamente no centro da composição, em uma cadeira simples de madeira posicionada sobre um terreno árido e seco, coberto por terra rachada e pedras pequenas, em um campo vazio e infinito. Atrás de mim, perfeitamente alinhado ao meu corpo, há um grande cavalo preto de porte imponente, parado de frente para a câmera, extremamente próximo, criando uma composição visual poderosa e simétrica. O cavalo ocupa quase toda a altura da cena, com pelagem preta brilhante, musculatura forte, textura dos pelos extremamente detalhada, crina longa e escura caindo sobre os olhos, arreio preto fosco minimalista e expressão calma porém dominante.\n" +
+        "Minha pose é rígida, estática e absolutamente simétrica, transmitindo presença, silêncio e autoridade. Estou sentada com as pernas abertas em ângulo natural, os pés firmemente apoiados no chão, levemente afastados, usando botas pretas de couro liso com acabamento fosco. Meus braços descansam naturalmente entre as pernas, com as mãos relaxadas segurando delicadamente cordas pretas grossas posicionadas sobre a cadeira. Minha coluna está reta, os ombros alinhados e o corpo completamente voltado para frente.\n" +
+        "Meu rosto possui uma expressão fria, neutra e hipnotizante, sem sorriso, com olhar fixo diretamente para a câmera. Minha pele apresenta textura extremamente realista, poros naturais visíveis, micro detalhes autênticos, leve suavidade cinematográfica e acabamento editorial sofisticado. Meus cabelos são longos, volumosos e ondulados, com ondas suaves e definidas caindo perfeitamente pelos ombros, com textura sedosa extremamente detalhada e movimento natural causado pelo vento leve do ambiente.\n" +
+        "Estou usando um terno preto oversized de alfaiataria premium, extremamente elegante e minimalista. O blazer possui tecido de lã fria encorpada com textura fosca refinada, caimento estruturado e lapelas clássicas discretas. A calça social preta possui modelagem reta, tecido pesado e sofisticado com leves vincos naturais extremamente detalhados. O figurino inteiro transmite luxo silencioso, estética old money e editorial de moda contemporânea.\n" +
+        "O ambiente deve parecer vasto, vazio e silencioso, com horizonte aberto e céu branco acinzentado totalmente estourado pela luz difusa, criando um contraste dramático entre o fundo claro e os elementos escuros da composição. O chão seco precisa apresentar textura hiper detalhada, com rachaduras, pedras, poeira e profundidade realista. A fotografia deve transmitir sensação de solidão, força feminina, mistério e conexão simbólica entre humano e animal.\n" +
+        "A iluminação deve ser natural, suave e cinematográfica, como um dia nublado com luz difusa espalhada uniformemente pelo cenário, criando sombras delicadas e realistas. Contraste refinado em preto e branco, pretos profundos, brancos suaves e ampla faixa dinâmica. Profundidade de campo realista com foco extremamente preciso em mim e no cavalo, mantendo o fundo levemente desfocado de forma natural.\n" +
+        "Capturado com uma DSLR full frame Canon EOS R5, lente 85 mm f/1.8 para detalhes ultra nítidos, texturas de pele e superfícies extremamente detalhadas, iluminação natural e cinematográfica, profundidade de campo realista, shot on 35mm lens. Ultra photorealistic, hyper detailed skin texture, realistic fabric textures, cinematic monochrome grading, editorial fashion photography, fine art composition, natural imperfections, realistic anatomy, ultra sharp focus, realistic horse anatomy, museum-quality portrait, masterpiece photography, volumetric atmosphere, realistic grain, premium cinematic realism.",
+    "image": "/imagens/capas/prompt-1.png",
     "attachments": [
-      {
-        "id": "1-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-1-ref-1.jpg"
-      },
-      {
-        "id": "1-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-1-ref-2.jpg"
-      }
+
     ]
   },
   {
     "id": 2,
-    "premium": true,
-    "title": "Editorial Elegante Luxuoso",
+    "premium": false,
+    "title": "Foto fashion",
     "category": "Feminino",
     "tags": [
       "moda",
-      "colorido",
+      "óculos",
       "lifestyle"
     ],
-    "prompt": "",
-    "image": "/imagens/capas/prompt-2.jpg",
+    "prompt": "Configuração Técnica: Uma fotografia de retrato ultra detalhada, com resolução nativa de 8K, capturada com uma câmera full-frame Canon EOS R5 e uma lente Canon RF 85 mm f/1.8. A imagem deve ser renderizada com nitidez extrema e realismo fotográfico bruto, indistinguível de uma foto real, mesmo sob zoom e análise detalhada.\n" +
+        "Sujeito e Pose: Um close-up (retrato de busto) da mulher com cabelos em duas tranças de raiz (cornrows) puxadas para trás e duas franjas soltas na frente. Ela está voltada diretamente para a câmera, com a cabeça ligeiramente inclinada para baixo. O olhar é intenso e direto, olhando por cima da borda dos óculos. A pose é idêntica à da referência.\n" +
+        "Expressão e Rosto: Uma expressão neutra, penetrante e ligeiramente desafiadora. Os lábios são preenchidos e de cor natural, rosado fosco. Os olhos são brilhantes. A textura da pele deve ser crua e natural, com poros visíveis, pequenas imperfeições de pele, pêlos faciais finos, textura natural da derme, evitando totalmente a pele 'perfeita' ou 'suavizada'. As sobrancelhas são preenchidas naturalmente.\n" +
+        "Acessórios: Ela usa os óculos de sol sem armação e ovais com lentes âmbar/laranja, apoiados mais abaixo no nariz.  Um pequeno brinco de stud ou argola é visível na orelha esquerda.\n" +
+        "Roupa: Uma Blazer de alfaiataria laranja, estruturado, tecido de qualidade visivel, com decote em V profundo.\n" +
+        "Ambiente e Iluminação: O fundo é um preto profundo e impenetrável. A iluminação é cinematográfica, direcional e dura, proveniente de uma única fonte de luz de ângulo baixo para a direita (como uma lanterna ou ponto de luz direcional), criando sombras fortes e definidas no rosto (no contorno do nariz, sob o queixo) e destacando as texturas da pele e dos óculos. Há um brilho quente e suave no cabelo e nos óculos. A luz é dura e imperdoável, não suave ou de estúdio.\n" +
+        "Detalhes de Superfície: Sob zoom, a textura do metal das correntes e óculos deve ter micro-riscos e desgaste natural. A fibra do tecido da regata é nítida. Os fios individuais de cabelo nas tranças e na franja são renderizados com clareza extraordinária. O material das lentes dos óculos tem clareza e reflexos mínimos e naturais.\n" +
+        "Profundidade de Campo: Uma profundidade de campo incrivelmente rasa devido à abertura f/1.8, tornando os olhos e o centro do rosto nítidos como navalha, a parte de trás do cabelo se misturam suavemente no preto profundo.\n" +
+        "Estilo Visual: Uma estética de foto de filme granulado de 35mm (embora capturada digitalmente), com granulação autêntica e natural. A sensação é crua e imediata, como um snapshot de rua ou de noite autêntico, não uma pose de estúdio.\n" +
+        "Evitar Totalmente: Aparência de estúdio, iluminação suave, suavização de pele, imperfeições corrigidas, pose de 'influencer' ensaiada, renderização 3D, arte digital, estética de IA, filtros de beleza. A imagem deve ser crua e autêntica.\n",
+    "image": "/imagens/capas/prompt-2.png",
     "attachments": []
   },
   {
     "id": 3,
-    "requiresLogin": true,
-    "title": "Sessão ao Ar Livre Vibrante",
-    "category": "Ensaio Fotográfico",
+    "requiresLogin": false,
+    "title": "Foto Preto & Branco",
+    "category": "Selfie",
     "tags": [
       "estúdio",
       "close-up",
-      "cinematográfico"
+      "peb"
     ],
-    "prompt": "Retrato vibrante de sessão ao ar livre, estética cinematográfica, capturado com grande angular 24mm e chiaroscuro de alto contraste. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-3.jpg",
+    "prompt": "Usando a foto de referência, use meu rosto e Crie um retrato em preto e branco de alta qualidade com iluminação dramática e contraste forte. O fundo deve ser completamente preto, destacando apenas o rosto e parte do tronco da pessoa. Veste uma camisa com gola e está com uma expressão séria e intensa. A luz deve vir de um ângulo lateral ou superior, criando sombras marcantes que realçam os traços faciais. O estilo deve lembrar fotografia de estúdio com foco artístico e emocional, transmitindo profundidade e introspecção.",
+    "image": "/imagens/capas/prompt-3.png",
     "attachments": []
   },
   {
     "id": 4,
-    "title": "Detalhe Fotográfico Sofisticado",
-    "category": "Ultrarrealista",
+    "title": "Retrato perfil",
+    "category": "Selfie",
     "tags": [
-      "externa",
-      "corpo inteiro",
-      "ultrarrealista"
+      "4k",
+      "4:3",
+      "perfil"
     ],
-    "prompt": "Retrato sofisticado de detalhe fotográfico, vibe minimalista e clean, capturado com teleobjetiva 135mm e luz natural de janela. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-4.jpg",
-    "attachments": [
-      {
-        "id": "4-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-4-ref-1.jpg"
-      }
-    ]
+    "prompt": "Premium cinematic lifestyle portrait in vertical 4:5 aspect ratio, outdoors beneath a clean, rich blue sky with no distracting elements. Replace the subject with the uploaded reference character, precisely preserving their real facial structure, hairstyle and hair volume, skin tone, jawline, nose shape, lips, body proportions, age appearance, and natural identity. Low-angle close-up from behind and slightly to the side, the character positioned slightly off-center with shoulder and back partially visible; head turned into a crisp side-profile while looking away into the distance. Strong warm sunlight from the side creates realistic highlights and specular reflections across face, hair, and any premium sunglasses (only if they naturally match the reference character’s style). Outfit updated to fit the reference character’s personality: a high-end textured knit/striped sweater, cardigan, casual jacket, or layered streetwear piece with tailored fit, premium fabric weave, and subtle patterning, maintaining an editorial luxury feel. Emphasize lifelike skin pores, fine hair strands, fabric texture, cinematic shadows, warm highlights, and natural movement. Shot on a 50mm lens, shallow depth of field, sharp focus, professional photography, masterful composition, warm cinematic color grading, film photography look, photorealistic, hyperrealistic, ultra high definition, highly detailed, 8K resolution, Instagram-ready.\n" +
+        "\n" +
+        "NEGATIVE PROMPT: text, logo, watermark, blurry face, wrong face, deformed sunglasses, bad anatomy, distorted ears, extra limbs, messy hair artifacts, plastic skin, fake fabric texture, oversharpened image, unrealistic lighting, cartoon, CGI, duplicate person, low resolution, unnatural pose, distorted background, overexposed sky",
+    "image": "/imagens/capas/prompt-4.png",
   },
   {
     "id": 5,
-    "title": "Capa e Máscara Urbano",
-    "category": "Crianças Heróis",
+    "title": "Indor Selfie",
+    "category": "Selfie",
     "tags": [
-      "preto e branco",
-      "produto",
-      "retrato"
+      "gestos",
     ],
-    "prompt": "Retrato urbano de capa e máscara, tom dramático e misterioso, capturado com lente 85mm f/1.4 e softbox de estúdio. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-5.jpg",
+    "prompt": "A highly realistic cinematic selfie-style photo of a young woman in a cozy indoor setting. She has long dark brown hair styled in a loose messy bun with soft strands falling around her face, natural facial features, medium tan skin tone, realistic skin texture with slight imperfections, and minimal makeup. She is wearing a slightly oversized dark graphic t-shirt with a vintage print. She is holding the camera at arm’s length while making a peace sign with her fingers and a playful pout expression, looking directly into the camera. The lighting is natural window light coming from the side, casting soft shadows and highlights on her face. The background is a minimal modern room with soft neutral tones and slightly blurred details. Shot like a real smartphone selfie but with DSLR realism, 35mm lens look, ultra realistic, high detail, natural color grading.\n" +
+        "Character Detail Booster\n" +
+        "same face, consistent identity, natural brunette, realistic skin texture, visible pores, soft imperfections\n" +
+        "Outfit Detail Booster\n" +
+        "oversized graphic t-shirt, vintage print, soft fabric folds, casual home style\n" +
+        "Camera Booster\n" +
+        "selfie angle, arm extended, slight wide perspective, natural framing, handheld feel\n" +
+        "Lighting Booster\n" +
+        "window light, soft shadows, natural highlights, warm indoor daylight\n" +
+        "Negative Prompt\n" +
+        "different face, identity change, plastic skin, beauty filter look, CGI, distorted hand, bad anatomy, blur",
+    "image": "/imagens/capas/prompt-5.png",
     "attachments": []
   },
   {
     "id": 6,
-    "title": "Hambúrguer Gourmet Noturno",
-    "category": "Lanches",
+    "title": "Golden Hour",
+    "category": "Selfie",
     "tags": [
-      "colorido",
-      "lifestyle",
-      "moda"
+      "sol",
+      "felicidade",
     ],
-    "prompt": "Retrato noturno de hambúrguer gourmet, atmosfera intimista, capturado com lente 50mm f/1.8 e luz suave difusa. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-6.jpg",
+    "prompt": "portrait of a young woman with long straight dark brown hair, warm skin tone, expressive brown eyes, delicate facial features, laughing naturally with a bright joyful smile, slightly messy wind-blown hair, wearing a casual oversized sweatshirt, sitting on a sandy beach during sunset, golden hour lighting, dramatic orange and red sky, sun near the horizon over the ocean, candid moment, relaxed posture, playful energy, cinematic composition, shallow depth of field, 85mm lens, ultra realistic, warm tones, photorealistic ",
+    "image": "/imagens/capas/prompt-6.png",
     "attachments": []
   },
   {
     "id": 7,
-    "title": "Campanha de Marca Golden Hour",
-    "category": "Anúncios",
+    "title": "Relaxing moment",
+    "category": "Selfie",
     "tags": [
-      "close-up",
-      "cinematográfico",
-      "estúdio"
+      "jardim",
+      "cerejeira",
     ],
-    "prompt": "Retrato golden hour de campanha de marca, clima editorial de revista, capturado com lente 35mm e iluminação dramática lateral. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-7.jpg",
-    "attachments": [
-      {
-        "id": "7-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-7-ref-1.jpg"
-      },
-      {
-        "id": "7-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-7-ref-2.jpg"
-      }
-    ]
+    "prompt": "portrait of a young woman with long straight dark brown hair, warm skin tone, expressive brown eyes, delicate facial features, soft serious expression, slightly looking away thoughtfully, calm and elegant mood, wearing a light white blouse, standing beside a tree with pink cherry blossoms, spring atmosphere, soft sunlight filtering through flowers, gentle pose with hand near face, dreamy background, shallow depth of field, cinematic lighting, ultra realistic, soft pastel colors, 85mm lens, photorealistic ",
+    "image": "/imagens/capas/prompt-7.png",
   },
   {
     "id": 8,
-    "title": "Retrato Casual Premium",
-    "category": "Masculino",
+    "title": "Airport Selfie",
+    "category": "Selfie",
     "tags": [
-      "corpo inteiro",
-      "editorial",
-      "externa"
+      "aeroporto",
+      "golden hour",
+      "liberdade"
     ],
-    "prompt": "Retrato premium de retrato casual, estética cinematográfica, capturado com grande angular 24mm e golden hour quente. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-8.jpg",
+    "prompt": "A highly realistic cinematic photo of a young woman standing on an airport runway during sunset. She has long dark brown hair flowing in the wind. She is wearing a white t-shirt, white shorts, and an oversized denim jacket. Her arms are spread wide and she has an excited energetic expression with a bright open smile, expressing freedom and joy. A large airplane is flying overhead. Shot like a DSLR photo, 35mm lens, cinematic color grading. Scene Booster airplane, runway, sunset sky Outfit Detail Booster denim jacket, natural folds Negative Prompt fake airplane, unrealistic lighting",
+    "image": "/imagens/capas/prompt-8.png",
     "attachments": []
   },
   {
@@ -175,8 +158,10 @@ export const prompts = [
       "retrato",
       "preto e branco"
     ],
-    "prompt": "Retrato contemplativo de lifestyle casual, vibe minimalista e clean, capturado com teleobjetiva 135mm e luz de neon ciano e magenta. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-9.jpg",
+    "prompt": "A highly realistic cinematic lifestyle photo of a young woman sitting at a cozy outdoor cafe. She has long dark brown hair styled naturally, soft facial features, and realistic skin texture with subtle imperfections. She is wearing a fitted black off-shoulder top and high-waisted black jeans, accessorized with a minimal necklace and a smartwatch. She is sitting in a relaxed posture, slightly angled to the side, looking away from the camera with a natural smile, her lips clearly curved into a soft visible smile (not exaggerated), expressing warmth and happiness. Her gaze is directed off to the side, creating a candid and unposed moment. Her face is relaxed, with gentle cheeks lift and natural emotion. The environment features a modern cafe setting with wooden tables, glass windows, greenery, and soft reflections. Natural daylight creates balanced cinematic lighting with soft shadows and highlights. Background is slightly blurred with depth of field, giving a DSLR-style aesthetic. Shot like a DSLR photo, 50mm lens, f/1.8, ultra realistic, high detail, natural color grading." +
+        "Character Detail Booster same face, consistent identity, natural brunette, realistic skin texture 🔥 Outfit Detail Booster off-shoulder black top, fitted fabric, natural folds" +
+        "Environment Booster outdoor cafe, greenery, wooden table, glass reflections Expression Booster looking away, smiling face, visible smile, soft happy expression, candid moment Negative Prompt direct eye contact, no smile, serious face, exaggerated grin, plastic skin, CGI look",
+    "image": "/imagens/capas/prompt-9.png",
     "attachments": []
   },
   {
@@ -188,15 +173,8 @@ export const prompts = [
       "moda",
       "colorido"
     ],
-    "prompt": "Retrato clássico de retrato artístico, tom dramático e misterioso, capturado com lente 85mm f/1.4 e chiaroscuro de alto contraste. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-10.jpg",
-    "attachments": [
-      {
-        "id": "10-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-10-ref-1.jpg"
-      }
-    ]
+    "prompt": "A highly realistic cinematic lifestyle photo of a young woman sitting in a cozy modern cafe. She has long dark brown hair, natural facial features, and realistic skin texture. She is resting her chin on her hand and smiling with a gentle visible smile, slightly more pronounced but still natural and relaxed, with softly lifted cheeks and warm expression, looking comfortably toward the camera. She is wearing a stylish casual jacket with subtle embroidery details. In front of her is a table with a drink glass and cafe elements. The environment features warm ambient lighting, decorative interior, plants, and soft bokeh lights in the background. Lighting is warm and cinematic with balanced highlights and soft shadows. Depth of field creates a smooth background blur. Shot like a DSLR photo, 85mm lens, f/1.8, ultra realistic, high detail. 🔥 Outfit Detail Booster casual jacket, embroidered details, natural fabric folds ☕ Environment Booster cozy cafe, warm lighting, bokeh lights, modern interior 🎥 Expression Booster gentle visible smile, slightly lifted cheeks, warm happy expression, natural emotion 🚫 Negative Prompt exaggerated smile, wide grin, fake expression, plastic skin, unrealistic lighting",
+    "image": "/imagens/capas/prompt-10.png",
   },
   {
     "id": 11,
@@ -207,1103 +185,65 @@ export const prompts = [
       "estúdio",
       "ultrarrealista"
     ],
-    "prompt": "Retrato moderno de pele hiper-detalhada, atmosfera intimista, capturado com lente 50mm f/1.8 e luz natural de janela. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-11.jpg",
+    "prompt": "A highly realistic cinematic travel photo of a young woman taking a selfie in front of the Eiffel Tower in Paris. She has long dark brown hair styled naturally, soft facial features, and realistic skin texture. She is wearing a cozy red knitted sweater with a matching hair bow, smiling softly with a gentle relaxed expression while looking slightly upward. The background shows Parisian architecture with the Eiffel Tower clearly visible. Lighting is soft natural daylight with a slightly overcast sky, creating balanced cinematic tones. Depth of field keeps her in sharp focus while softly blurring the background. Shot like a DSLR photo, 50mm lens, ultra realistic, travel photography style. 🔥 Outfit Detail Booster knitted sweater, textured fabric, cozy winter style 🌍 Environment Booster Eiffel Tower, Paris street, European architecture 🚫 Negative Prompt fake landmark, distorted tower, CGI look, oversaturated colors",
+    "image": "/imagens/capas/prompt-11.png",
     "attachments": []
   },
   {
     "id": 12,
-    "title": "Criança Aventureira Editorial",
-    "category": "Crianças Heróis",
+    "title": "Ultra realista",
+    "category": "Perfil",
     "tags": [
-      "editorial",
-      "externa",
-      "corpo inteiro"
+      "exposure",
+      "camera"
     ],
-    "prompt": "Retrato editorial de criança aventureira, clima editorial de revista, capturado com lente 35mm e softbox de estúdio. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-12.jpg",
+    "prompt": "Ultra-realistic cinematic alter ego portrait of a young person standing alone inside a dark atmospheric environment flooded with deep crimson red light and thick volumetric smoke. The scene should feel like a visual representation of internal conflict, duality, identity, memory, and hidden emotions. The primary subject stands perfectly sharp in the foreground while a second version of the same person appears behind them as a ghostly motion-blurred silhouette, creating the illusion of an alternate self existing in another dimension.\n" +
+        "The sharp subject should be photographed with premium fashion-editorial quality, wearing oversized black streetwear, minimal accessories, and maintaining a calm, mysterious expression. Their pose should feel natural yet powerful, with subtle confidence and emotional depth. Skin texture must remain highly realistic with visible pores, natural imperfections, detailed eyes, authentic facial shadows, and cinematic realism. The subject should not smile. Their gaze should feel intense, detached, and introspective, as if they are confronting another version of themselves.\n" +
+        "Behind the main figure, a blurred duplicate of the same person emerges through the smoke. This alter ego should appear created through realistic long-exposure motion blur rather than digital effects. The blurred figure should stretch horizontally as if moving rapidly through space and time, creating an unsettling but beautiful visual contrast between stillness and motion. The effect must feel organic, realistic, and emotionally symbolic, representing hidden thoughts, alternate realities, memories, or an inner shadow.\n" +
+        "The environment should be completely immersed in dense red atmospheric fog illuminated by powerful backlights hidden within the smoke. Deep crimson, scarlet, and dark ember tones dominate the color palette while preserving rich blacks throughout the frame. Volumetric lighting should wrap around the figures, creating glowing edges and subtle separation from the background. The smoke should feel alive and cinematic, swirling naturally around the subjects while catching the red light in dramatic ways.\n" +
+        "Composition should follow luxury fashion campaign standards with perfect visual balance and strong negative space. The background remains minimal and uncluttered so the focus stays entirely on the interaction between the sharp subject and their blurred alter ego. Every frame should feel like a premium album cover, psychological thriller movie poster, luxury fragrance campaign, or award-winning editorial photograph.\n" +
+        "Shot on a professional full-frame cinema camera using an 85mm lens, shallow depth of field, realistic optical compression, ultra-detailed textures, cinematic dynamic range, realistic shadow falloff, premium color grading, subtle film grain, soft diffusion, volumetric smoke simulation, dramatic red backlighting, photorealistic skin rendering, luxury fashion photography aesthetics, psychological storytelling, emotional atmosphere, masterpiece composition, hyper-realistic lighting, 8K ultra-detail, award-winning portrait photography, Oscar-worthy visual direction.",
+    "image": "/imagens/capas/prompt-12.png",
     "attachments": []
   },
   {
     "id": 13,
-    "title": "Sobremesa Premium Cinematográfico",
-    "category": "Lanches",
+    "title": "Óculos escuro",
+    "category": "Perfil",
     "tags": [
       "retrato",
-      "preto e branco",
-      "produto"
+      "vermelho",
     ],
-    "prompt": "Retrato cinematográfico de sobremesa premium, estética cinematográfica, capturado com grande angular 24mm e luz suave difusa. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-13.jpg",
-    "attachments": [
-      {
-        "id": "13-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-13-ref-1.jpg"
+    "prompt": "Ultra-realistic cinematic studio portrait of the reference person (I SHARED THE IMAGE), dark luxury aesthetic, centered male subject wearing matte black sunglasses and black textured sweater, sharp jawline, trimmed beard, soft confident expression, deep black shadows, intense red rim lighting glowing around hair and shoulders, dramatic red gradient background fading into black, moody low-key lighting, ultra detailed skin texture, premium editorial fashion photography, symmetrical composition, shallow depth of field, soft diffused key light from front, neon red edge glow, high contrast, rich blacks, minimal clean background, modern masculine vibe, luxury Instagram post style, hyper-realistic, DSLR quality, 85mm lens, f/1.8, cinematic color grading, crisp focus on face, studio-quality retouching, realistic reflections on sunglasses, subtle film grain, photorealistic, 8k, vertical portrait composition --ar 3:4 --style raw --v 6.IMAGE SIZE SHOULD BE 1080X1350",
+    "image": "/imagens/capas/prompt-13.png",
+  },
+    {
+      "id": 14,
+      "title": "Restauração de foto",
+      "category": "Foto",
+      "tags": [
+        "foto",
+        "restauração",
+      ],
+      "prompt": "Enhance the portrait while strictly preserving the subject's identity with accurate facial geometry. Do not change their expression or face shape. Only allow subtle feature cleanup without altering who they are. Keep the exact same background from the reference image. No replacements, no changes, no new objects, no layout shifts. The environment must look identical. The image must be recreated as if it was shot on a Sony A1, using an 85mm f1.4 lens, at f1.6, ISO 100, 1/200 shutter speed, cinematic shallow depth of field, perfect facial focus, and an editorial-neutral color profile. This Sony A1 + 85mm f1.4 setup is mandatory. The final image must clearly look like premium full-frame Sony A1 quality. Lighting must match the exact direction, angle, and mood of the reference photo. Upgrade the lighting into a cinematic, subject-focused style: soft directional light, warm highlights, cool shadows, deeper contrast, expanded dynamic range, micro-contrast boost, smooth gradations, and zero harsh shadows. Maintain neutral premium color tone, cinematic contrast curve, natural saturation, real skin texture (not plastic), and subtle film grain. No fake glow, no runway lighting, no over smoothing. Render in 4K resolution, 10-bit color, cinematic editorial style, premium clarity, portrait crop, and keep the original environmental vibe untouched. Re-render the subject with improved realism, depth, texture, and lighting while keeping identity and background fully preserved. NEGATIVE INSTRUCTIONS: No new background. No background change. No overly dramatic lighting. No face morphing. No fake glow. No flat lighting. No over-smooth skin.",
+      "image": "/imagens/capas/prompt-14.png",
+      "credit": {
+        "site": "Nome do Site",
+        "url": "https://exemplo.com"
       },
-      {
-        "id": "13-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-13-ref-2.jpg"
-      }
-    ]
-  },
-  {
-    "id": 14,
-    "title": "Mockup Comercial Dramático",
-    "category": "Anúncios",
-    "tags": [
-      "moda",
-      "colorido",
-      "lifestyle"
-    ],
-    "prompt": "Retrato dramático de mockup comercial, vibe minimalista e clean, capturado com teleobjetiva 135mm e iluminação dramática lateral. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-14.jpg",
-    "attachments": []
-  },
-  {
-    "id": 15,
-    "title": "Empresário Confiante Minimalista",
-    "category": "Masculino",
-    "tags": [
-      "estúdio",
-      "close-up",
-      "cinematográfico"
-    ],
-    "prompt": "Retrato minimalista de empresário confiante, tom dramático e misterioso, capturado com lente 85mm f/1.4 e golden hour quente. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-15.jpg",
-    "attachments": []
-  },
-  {
-    "id": 16,
-    "title": "Vestido de Cetim Luxuoso",
-    "category": "Feminino",
-    "tags": [
-      "externa",
-      "corpo inteiro",
-      "editorial"
-    ],
-    "prompt": "Retrato luxuoso de vestido de cetim, atmosfera intimista, capturado com lente 50mm f/1.8 e luz de neon ciano e magenta. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-16.jpg",
-    "attachments": [
-      {
-        "id": "16-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-16-ref-1.jpg"
-      }
-    ]
-  },
-  {
-    "id": 17,
-    "title": "Estúdio Profissional Vibrante",
-    "category": "Ensaio Fotográfico",
-    "tags": [
-      "preto e branco",
-      "produto",
-      "retrato"
-    ],
-    "prompt": "Retrato vibrante de estúdio profissional, clima editorial de revista, capturado com lente 35mm e chiaroscuro de alto contraste. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-17.jpg",
-    "attachments": []
-  },
-  {
-    "id": 18,
-    "title": "Render 8K Sofisticado",
-    "category": "Ultrarrealista",
-    "tags": [
-      "colorido",
-      "lifestyle",
-      "ultrarrealista"
-    ],
-    "prompt": "Retrato sofisticado de render 8k, estética cinematográfica, capturado com grande angular 24mm e luz natural de janela. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-18.jpg",
-    "attachments": []
-  },
-  {
-    "id": 19,
-    "title": "Fantasia Infantil Urbano",
-    "category": "Crianças Heróis",
-    "tags": [
-      "close-up",
-      "cinematográfico",
-      "estúdio"
-    ],
-    "prompt": "Retrato urbano de fantasia infantil, vibe minimalista e clean, capturado com teleobjetiva 135mm e softbox de estúdio. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-19.jpg",
-    "attachments": [
-      {
-        "id": "19-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-19-ref-1.jpg"
-      },
-      {
-        "id": "19-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-19-ref-2.jpg"
-      }
-    ]
-  },
-  {
-    "id": 20,
-    "title": "Food Styling Noturno",
-    "category": "Lanches",
-    "tags": [
-      "corpo inteiro",
-      "editorial",
-      "externa"
-    ],
-    "prompt": "Retrato noturno de food styling, tom dramático e misterioso, capturado com lente 85mm f/1.4 e luz suave difusa. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-20.jpg",
-    "attachments": []
-  },
-  {
-    "id": 21,
-    "title": "Produto em Destaque Golden Hour",
-    "category": "Anúncios",
-    "tags": [
-      "produto",
-      "retrato",
-      "preto e branco"
-    ],
-    "prompt": "Retrato golden hour de produto em destaque, atmosfera intimista, capturado com lente 50mm f/1.8 e iluminação dramática lateral. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-21.jpg",
-    "attachments": []
-  },
-  {
-    "id": 22,
-    "title": "Aventureiro Urbano Premium",
-    "category": "Masculino",
-    "tags": [
-      "lifestyle",
-      "moda",
-      "colorido"
-    ],
-    "prompt": "Retrato premium de aventureiro urbano, clima editorial de revista, capturado com lente 35mm e golden hour quente. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-22.jpg",
-    "attachments": [
-      {
-        "id": "22-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-22-ref-1.jpg"
-      }
-    ]
-  },
-  {
-    "id": 23,
-    "title": "Retrato Glamour Contemplativo",
-    "category": "Feminino",
-    "tags": [
-      "cinematográfico",
-      "estúdio",
-      "close-up"
-    ],
-    "prompt": "Retrato contemplativo de retrato glamour, estética cinematográfica, capturado com grande angular 24mm e luz de neon ciano e magenta. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-23.jpg",
-    "attachments": []
-  },
-  {
-    "id": 24,
-    "title": "Ensaio Noturno Clássico",
-    "category": "Ensaio Fotográfico",
-    "tags": [
-      "editorial",
-      "externa",
-      "corpo inteiro"
-    ],
-    "prompt": "Retrato clássico de ensaio noturno, vibe minimalista e clean, capturado com teleobjetiva 135mm e chiaroscuro de alto contraste. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-24.jpg",
-    "attachments": []
-  },
-  {
-    "id": 25,
-    "title": "Realismo Extremo Moderno",
-    "category": "Ultrarrealista",
-    "tags": [
-      "retrato",
-      "preto e branco",
-      "ultrarrealista"
-    ],
-    "prompt": "Retrato moderno de realismo extremo, tom dramático e misterioso, capturado com lente 85mm f/1.4 e luz natural de janela. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-25.jpg",
-    "attachments": [
-      {
-        "id": "25-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-25-ref-1.jpg"
-      },
-      {
-        "id": "25-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-25-ref-2.jpg"
-      }
-    ]
-  },
-  {
-    "id": 26,
-    "title": "Pequeno Super-herói Editorial",
-    "category": "Crianças Heróis",
-    "tags": [
-      "moda",
-      "colorido",
-      "lifestyle"
-    ],
-    "prompt": "Retrato editorial de pequeno super-herói, atmosfera intimista, capturado com lente 50mm f/1.8 e softbox de estúdio. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-26.jpg",
-    "attachments": []
-  },
-  {
-    "id": 27,
-    "title": "Pizza Artesanal Cinematográfico",
-    "category": "Lanches",
-    "tags": [
-      "estúdio",
-      "close-up",
-      "cinematográfico"
-    ],
-    "prompt": "Retrato cinematográfico de pizza artesanal, clima editorial de revista, capturado com lente 35mm e luz suave difusa. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-27.jpg",
-    "attachments": []
-  },
-  {
-    "id": 28,
-    "title": "Anúncio de Perfume Dramático",
-    "category": "Anúncios",
-    "tags": [
-      "externa",
-      "corpo inteiro",
-      "editorial"
-    ],
-    "prompt": "Retrato dramático de anúncio de perfume, estética cinematográfica, capturado com grande angular 24mm e iluminação dramática lateral. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-28.jpg",
-    "attachments": [
-      {
-        "id": "28-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-28-ref-1.jpg"
-      }
-    ]
-  },
-  {
-    "id": 29,
-    "title": "Estilo Streetwear Minimalista",
-    "category": "Masculino",
-    "tags": [
-      "preto e branco",
-      "produto",
-      "retrato"
-    ],
-    "prompt": "Retrato minimalista de estilo streetwear, vibe minimalista e clean, capturado com teleobjetiva 135mm e golden hour quente. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-29.jpg",
-    "attachments": []
-  },
-  {
-    "id": 30,
-    "title": "Beleza Natural Luxuoso",
-    "category": "Feminino",
-    "tags": [
-      "colorido",
-      "lifestyle",
-      "moda"
-    ],
-    "prompt": "Retrato luxuoso de beleza natural, tom dramático e misterioso, capturado com lente 85mm f/1.4 e luz de neon ciano e magenta. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-30.jpg",
-    "attachments": []
-  },
-  {
-    "id": 31,
-    "title": "Ensaio na Praia Vibrante",
-    "category": "Ensaio Fotográfico",
-    "tags": [
-      "close-up",
-      "cinematográfico",
-      "estúdio"
-    ],
-    "prompt": "Retrato vibrante de ensaio na praia, atmosfera intimista, capturado com lente 50mm f/1.8 e chiaroscuro de alto contraste. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-31.jpg",
-    "attachments": [
-      {
-        "id": "31-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-31-ref-1.jpg"
-      },
-      {
-        "id": "31-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-31-ref-2.jpg"
-      }
-    ]
-  },
-  {
-    "id": 32,
-    "title": "Textura Realista Sofisticado",
-    "category": "Ultrarrealista",
-    "tags": [
-      "corpo inteiro",
-      "editorial",
-      "ultrarrealista"
-    ],
-    "prompt": "Retrato sofisticado de textura realista, clima editorial de revista, capturado com lente 35mm e luz natural de janela. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-32.jpg",
-    "attachments": []
-  },
-  {
-    "id": 33,
-    "title": "Herói Mirim Urbano",
-    "category": "Crianças Heróis",
-    "tags": [
-      "produto",
-      "retrato",
-      "preto e branco"
-    ],
-    "prompt": "Retrato urbano de herói mirim, estética cinematográfica, capturado com grande angular 24mm e softbox de estúdio. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-33.jpg",
-    "attachments": []
-  },
-  {
-    "id": 34,
-    "title": "Café da Manhã Noturno",
-    "category": "Lanches",
-    "tags": [
-      "lifestyle",
-      "moda",
-      "colorido"
-    ],
-    "prompt": "Retrato noturno de café da manhã, vibe minimalista e clean, capturado com teleobjetiva 135mm e luz suave difusa. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-34.jpg",
-    "attachments": [
-      {
-        "id": "34-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-34-ref-1.jpg"
-      }
-    ]
-  },
-  {
-    "id": 35,
-    "title": "Cena de Produto Golden Hour",
-    "category": "Anúncios",
-    "tags": [
-      "cinematográfico",
-      "estúdio",
-      "close-up"
-    ],
-    "prompt": "Retrato golden hour de cena de produto, tom dramático e misterioso, capturado com lente 85mm f/1.4 e iluminação dramática lateral. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-35.jpg",
-    "attachments": []
-  },
-  {
-    "id": 36,
-    "title": "Executivo de Terno Premium",
-    "category": "Masculino",
-    "tags": [
-      "editorial",
-      "externa",
-      "corpo inteiro"
-    ],
-    "prompt": "Retrato premium de executivo de terno, atmosfera intimista, capturado com lente 50mm f/1.8 e golden hour quente. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-36.jpg",
-    "attachments": []
-  },
-  {
-    "id": 37,
-    "title": "Editorial Elegante Contemplativo",
-    "category": "Feminino",
-    "tags": [
-      "retrato",
-      "preto e branco",
-      "produto"
-    ],
-    "prompt": "Retrato contemplativo de editorial elegante, clima editorial de revista, capturado com lente 35mm e luz de neon ciano e magenta. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-37.jpg",
-    "attachments": [
-      {
-        "id": "37-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-37-ref-1.jpg"
-      },
-      {
-        "id": "37-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-37-ref-2.jpg"
-      }
-    ]
-  },
-  {
-    "id": 38,
-    "title": "Sessão ao Ar Livre Clássico",
-    "category": "Ensaio Fotográfico",
-    "tags": [
-      "moda",
-      "colorido",
-      "lifestyle"
-    ],
-    "prompt": "Retrato clássico de sessão ao ar livre, estética cinematográfica, capturado com grande angular 24mm e chiaroscuro de alto contraste. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-38.jpg",
-    "attachments": []
-  },
-  {
-    "id": 39,
-    "title": "Detalhe Fotográfico Moderno",
-    "category": "Ultrarrealista",
-    "tags": [
-      "estúdio",
-      "close-up",
-      "ultrarrealista"
-    ],
-    "prompt": "Retrato moderno de detalhe fotográfico, vibe minimalista e clean, capturado com teleobjetiva 135mm e luz natural de janela. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-39.jpg",
-    "attachments": []
-  },
-  {
-    "id": 40,
-    "title": "Capa e Máscara Editorial",
-    "category": "Crianças Heróis",
-    "tags": [
-      "externa",
-      "corpo inteiro",
-      "editorial"
-    ],
-    "prompt": "Retrato editorial de capa e máscara, tom dramático e misterioso, capturado com lente 85mm f/1.4 e softbox de estúdio. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-40.jpg",
-    "attachments": [
-      {
-        "id": "40-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-40-ref-1.jpg"
-      }
-    ]
-  },
-  {
-    "id": 41,
-    "title": "Hambúrguer Gourmet Cinematográfico",
-    "category": "Lanches",
-    "tags": [
-      "preto e branco",
-      "produto",
-      "retrato"
-    ],
-    "prompt": "Retrato cinematográfico de hambúrguer gourmet, atmosfera intimista, capturado com lente 50mm f/1.8 e luz suave difusa. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-41.jpg",
-    "attachments": []
-  },
-  {
-    "id": 42,
-    "title": "Campanha de Marca Dramático",
-    "category": "Anúncios",
-    "tags": [
-      "colorido",
-      "lifestyle",
-      "moda"
-    ],
-    "prompt": "Retrato dramático de campanha de marca, clima editorial de revista, capturado com lente 35mm e iluminação dramática lateral. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-42.jpg",
-    "attachments": []
-  },
-  {
-    "id": 43,
-    "title": "Retrato Casual Minimalista",
-    "category": "Masculino",
-    "tags": [
-      "close-up",
-      "cinematográfico",
-      "estúdio"
-    ],
-    "prompt": "Retrato minimalista de retrato casual, estética cinematográfica, capturado com grande angular 24mm e golden hour quente. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-43.jpg",
-    "attachments": [
-      {
-        "id": "43-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-43-ref-1.jpg"
-      },
-      {
-        "id": "43-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-43-ref-2.jpg"
-      }
-    ]
-  },
-  {
-    "id": 44,
-    "title": "Lifestyle Casual Luxuoso",
-    "category": "Feminino",
-    "tags": [
-      "corpo inteiro",
-      "editorial",
-      "externa"
-    ],
-    "prompt": "Retrato luxuoso de lifestyle casual, vibe minimalista e clean, capturado com teleobjetiva 135mm e luz de neon ciano e magenta. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-44.jpg",
-    "attachments": []
-  },
-  {
-    "id": 45,
-    "title": "Retrato Artístico Vibrante",
-    "category": "Ensaio Fotográfico",
-    "tags": [
-      "produto",
-      "retrato",
-      "preto e branco"
-    ],
-    "prompt": "Retrato vibrante de retrato artístico, tom dramático e misterioso, capturado com lente 85mm f/1.4 e chiaroscuro de alto contraste. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-45.jpg",
-    "attachments": []
-  },
-  {
-    "id": 46,
-    "title": "Pele Hiper-detalhada Sofisticado",
-    "category": "Ultrarrealista",
-    "tags": [
-      "lifestyle",
-      "moda",
-      "ultrarrealista"
-    ],
-    "prompt": "Retrato sofisticado de pele hiper-detalhada, atmosfera intimista, capturado com lente 50mm f/1.8 e luz natural de janela. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-46.jpg",
-    "attachments": [
-      {
-        "id": "46-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-46-ref-1.jpg"
-      }
-    ]
-  },
-  {
-    "id": 47,
-    "title": "Criança Aventureira Urbano",
-    "category": "Crianças Heróis",
-    "tags": [
-      "cinematográfico",
-      "estúdio",
-      "close-up"
-    ],
-    "prompt": "Retrato urbano de criança aventureira, clima editorial de revista, capturado com lente 35mm e softbox de estúdio. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-47.jpg",
-    "attachments": []
-  },
-  {
-    "id": 48,
-    "title": "Sobremesa Premium Noturno",
-    "category": "Lanches",
-    "tags": [
-      "editorial",
-      "externa",
-      "corpo inteiro"
-    ],
-    "prompt": "Retrato noturno de sobremesa premium, estética cinematográfica, capturado com grande angular 24mm e luz suave difusa. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-48.jpg",
-    "attachments": []
-  },
-  {
-    "id": 49,
-    "title": "Mockup Comercial Golden Hour",
-    "category": "Anúncios",
-    "tags": [
-      "retrato",
-      "preto e branco",
-      "produto"
-    ],
-    "prompt": "Retrato golden hour de mockup comercial, vibe minimalista e clean, capturado com teleobjetiva 135mm e iluminação dramática lateral. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-49.jpg",
-    "attachments": [
-      {
-        "id": "49-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-49-ref-1.jpg"
-      },
-      {
-        "id": "49-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-49-ref-2.jpg"
-      }
-    ]
-  },
-  {
-    "id": 50,
-    "title": "Empresário Confiante Premium",
-    "category": "Masculino",
-    "tags": [
-      "moda",
-      "colorido",
-      "lifestyle"
-    ],
-    "prompt": "Retrato premium de empresário confiante, tom dramático e misterioso, capturado com lente 85mm f/1.4 e golden hour quente. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-50.jpg",
-    "attachments": []
-  },
-  {
-    "id": 51,
-    "title": "Vestido de Cetim Contemplativo",
-    "category": "Feminino",
-    "tags": [
-      "estúdio",
-      "close-up",
-      "cinematográfico"
-    ],
-    "prompt": "Retrato contemplativo de vestido de cetim, atmosfera intimista, capturado com lente 50mm f/1.8 e luz de neon ciano e magenta. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-51.jpg",
-    "attachments": []
-  },
-  {
-    "id": 52,
-    "title": "Estúdio Profissional Clássico",
-    "category": "Ensaio Fotográfico",
-    "tags": [
-      "externa",
-      "corpo inteiro",
-      "editorial"
-    ],
-    "prompt": "Retrato clássico de estúdio profissional, clima editorial de revista, capturado com lente 35mm e chiaroscuro de alto contraste. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-52.jpg",
-    "attachments": [
-      {
-        "id": "52-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-52-ref-1.jpg"
-      }
-    ]
-  },
-  {
-    "id": 53,
-    "title": "Render 8K Moderno",
-    "category": "Ultrarrealista",
-    "tags": [
-      "preto e branco",
-      "produto",
-      "ultrarrealista"
-    ],
-    "prompt": "Retrato moderno de render 8k, estética cinematográfica, capturado com grande angular 24mm e luz natural de janela. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-53.jpg",
-    "attachments": []
-  },
-  {
-    "id": 54,
-    "title": "Fantasia Infantil Editorial",
-    "category": "Crianças Heróis",
-    "tags": [
-      "colorido",
-      "lifestyle",
-      "moda"
-    ],
-    "prompt": "Retrato editorial de fantasia infantil, vibe minimalista e clean, capturado com teleobjetiva 135mm e softbox de estúdio. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-54.jpg",
-    "attachments": []
-  },
-  {
-    "id": 55,
-    "title": "Food Styling Cinematográfico",
-    "category": "Lanches",
-    "tags": [
-      "close-up",
-      "cinematográfico",
-      "estúdio"
-    ],
-    "prompt": "Retrato cinematográfico de food styling, tom dramático e misterioso, capturado com lente 85mm f/1.4 e luz suave difusa. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-55.jpg",
-    "attachments": [
-      {
-        "id": "55-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-55-ref-1.jpg"
-      },
-      {
-        "id": "55-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-55-ref-2.jpg"
-      }
-    ]
-  },
-  {
-    "id": 56,
-    "title": "Produto em Destaque Dramático",
-    "category": "Anúncios",
-    "tags": [
-      "corpo inteiro",
-      "editorial",
-      "externa"
-    ],
-    "prompt": "Retrato dramático de produto em destaque, atmosfera intimista, capturado com lente 50mm f/1.8 e iluminação dramática lateral. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-56.jpg",
-    "attachments": []
-  },
-  {
-    "id": 57,
-    "title": "Aventureiro Urbano Minimalista",
-    "category": "Masculino",
-    "tags": [
-      "produto",
-      "retrato",
-      "preto e branco"
-    ],
-    "prompt": "Retrato minimalista de aventureiro urbano, clima editorial de revista, capturado com lente 35mm e golden hour quente. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-57.jpg",
-    "attachments": []
-  },
-  {
-    "id": 58,
-    "title": "Retrato Glamour Luxuoso",
-    "category": "Feminino",
-    "tags": [
-      "lifestyle",
-      "moda",
-      "colorido"
-    ],
-    "prompt": "Retrato luxuoso de retrato glamour, estética cinematográfica, capturado com grande angular 24mm e luz de neon ciano e magenta. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-58.jpg",
-    "attachments": [
-      {
-        "id": "58-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-58-ref-1.jpg"
-      }
-    ]
-  },
-  {
-    "id": 59,
-    "title": "Ensaio Noturno Vibrante",
-    "category": "Ensaio Fotográfico",
-    "tags": [
-      "cinematográfico",
-      "estúdio",
-      "close-up"
-    ],
-    "prompt": "Retrato vibrante de ensaio noturno, vibe minimalista e clean, capturado com teleobjetiva 135mm e chiaroscuro de alto contraste. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-59.jpg",
-    "attachments": []
-  },
-  {
-    "id": 60,
-    "title": "Realismo Extremo Sofisticado",
-    "category": "Ultrarrealista",
-    "tags": [
-      "editorial",
-      "externa",
-      "ultrarrealista"
-    ],
-    "prompt": "Retrato sofisticado de realismo extremo, tom dramático e misterioso, capturado com lente 85mm f/1.4 e luz natural de janela. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-60.jpg",
-    "attachments": []
-  },
-  {
-    "id": 61,
-    "title": "Pequeno Super-herói Urbano",
-    "category": "Crianças Heróis",
-    "tags": [
-      "retrato",
-      "preto e branco",
-      "produto"
-    ],
-    "prompt": "Retrato urbano de pequeno super-herói, atmosfera intimista, capturado com lente 50mm f/1.8 e softbox de estúdio. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-61.jpg",
-    "attachments": [
-      {
-        "id": "61-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-61-ref-1.jpg"
-      },
-      {
-        "id": "61-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-61-ref-2.jpg"
-      }
-    ]
-  },
-  {
-    "id": 62,
-    "title": "Pizza Artesanal Noturno",
-    "category": "Lanches",
-    "tags": [
-      "moda",
-      "colorido",
-      "lifestyle"
-    ],
-    "prompt": "Retrato noturno de pizza artesanal, clima editorial de revista, capturado com lente 35mm e luz suave difusa. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-62.jpg",
-    "attachments": []
-  },
-  {
-    "id": 63,
-    "title": "Anúncio de Perfume Golden Hour",
-    "category": "Anúncios",
-    "tags": [
-      "estúdio",
-      "close-up",
-      "cinematográfico"
-    ],
-    "prompt": "Retrato golden hour de anúncio de perfume, estética cinematográfica, capturado com grande angular 24mm e iluminação dramática lateral. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-63.jpg",
-    "attachments": []
-  },
-  {
-    "id": 64,
-    "title": "Estilo Streetwear Premium",
-    "category": "Masculino",
-    "tags": [
-      "externa",
-      "corpo inteiro",
-      "editorial"
-    ],
-    "prompt": "Retrato premium de estilo streetwear, vibe minimalista e clean, capturado com teleobjetiva 135mm e golden hour quente. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-64.jpg",
-    "attachments": [
-      {
-        "id": "64-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-64-ref-1.jpg"
-      }
-    ]
-  },
-  {
-    "id": 65,
-    "title": "Beleza Natural Contemplativo",
-    "category": "Feminino",
-    "tags": [
-      "preto e branco",
-      "produto",
-      "retrato"
-    ],
-    "prompt": "Retrato contemplativo de beleza natural, tom dramático e misterioso, capturado com lente 85mm f/1.4 e luz de neon ciano e magenta. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-65.jpg",
-    "attachments": []
-  },
-  {
-    "id": 66,
-    "title": "Ensaio na Praia Clássico",
-    "category": "Ensaio Fotográfico",
-    "tags": [
-      "colorido",
-      "lifestyle",
-      "moda"
-    ],
-    "prompt": "Retrato clássico de ensaio na praia, atmosfera intimista, capturado com lente 50mm f/1.8 e chiaroscuro de alto contraste. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-66.jpg",
-    "attachments": []
-  },
-  {
-    "id": 67,
-    "title": "Textura Realista Moderno",
-    "category": "Ultrarrealista",
-    "tags": [
-      "close-up",
-      "cinematográfico",
-      "ultrarrealista"
-    ],
-    "prompt": "Retrato moderno de textura realista, clima editorial de revista, capturado com lente 35mm e luz natural de janela. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-67.jpg",
-    "attachments": [
-      {
-        "id": "67-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-67-ref-1.jpg"
-      },
-      {
-        "id": "67-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-67-ref-2.jpg"
-      }
-    ]
-  },
-  {
-    "id": 68,
-    "title": "Herói Mirim Editorial",
-    "category": "Crianças Heróis",
-    "tags": [
-      "corpo inteiro",
-      "editorial",
-      "externa"
-    ],
-    "prompt": "Retrato editorial de herói mirim, estética cinematográfica, capturado com grande angular 24mm e softbox de estúdio. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-68.jpg",
-    "attachments": []
-  },
-  {
-    "id": 69,
-    "title": "Café da Manhã Cinematográfico",
-    "category": "Lanches",
-    "tags": [
-      "produto",
-      "retrato",
-      "preto e branco"
-    ],
-    "prompt": "Retrato cinematográfico de café da manhã, vibe minimalista e clean, capturado com teleobjetiva 135mm e luz suave difusa. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-69.jpg",
-    "attachments": []
-  },
-  {
-    "id": 70,
-    "title": "Cena de Produto Dramático",
-    "category": "Anúncios",
-    "tags": [
-      "lifestyle",
-      "moda",
-      "colorido"
-    ],
-    "prompt": "Retrato dramático de cena de produto, tom dramático e misterioso, capturado com lente 85mm f/1.4 e iluminação dramática lateral. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-70.jpg",
-    "attachments": [
-      {
-        "id": "70-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-70-ref-1.jpg"
-      }
-    ]
-  },
-  {
-    "id": 71,
-    "title": "Executivo de Terno Minimalista",
-    "category": "Masculino",
-    "tags": [
-      "cinematográfico",
-      "estúdio",
-      "close-up"
-    ],
-    "prompt": "Retrato minimalista de executivo de terno, atmosfera intimista, capturado com lente 50mm f/1.8 e golden hour quente. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-71.jpg",
-    "attachments": []
-  },
-  {
-    "id": 72,
-    "title": "Editorial Elegante Luxuoso",
-    "category": "Feminino",
-    "tags": [
-      "editorial",
-      "externa",
-      "corpo inteiro"
-    ],
-    "prompt": "Retrato luxuoso de editorial elegante, clima editorial de revista, capturado com lente 35mm e luz de neon ciano e magenta. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-72.jpg",
-    "attachments": []
-  },
-  {
-    "id": 73,
-    "title": "Sessão ao Ar Livre Vibrante",
-    "category": "Ensaio Fotográfico",
-    "tags": [
-      "retrato",
-      "preto e branco",
-      "produto"
-    ],
-    "prompt": "Retrato vibrante de sessão ao ar livre, estética cinematográfica, capturado com grande angular 24mm e chiaroscuro de alto contraste. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-73.jpg",
-    "attachments": [
-      {
-        "id": "73-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-73-ref-1.jpg"
-      },
-      {
-        "id": "73-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-73-ref-2.jpg"
-      }
-    ]
-  },
-  {
-    "id": 74,
-    "title": "Detalhe Fotográfico Sofisticado",
-    "category": "Ultrarrealista",
-    "tags": [
-      "moda",
-      "colorido",
-      "ultrarrealista"
-    ],
-    "prompt": "Retrato sofisticado de detalhe fotográfico, vibe minimalista e clean, capturado com teleobjetiva 135mm e luz natural de janela. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-74.jpg",
-    "attachments": []
-  },
-  {
-    "id": 75,
-    "title": "Capa e Máscara Urbano",
-    "category": "Crianças Heróis",
-    "tags": [
-      "estúdio",
-      "close-up",
-      "cinematográfico"
-    ],
-    "prompt": "Retrato urbano de capa e máscara, tom dramático e misterioso, capturado com lente 85mm f/1.4 e softbox de estúdio. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-75.jpg",
-    "attachments": []
-  },
-  {
-    "id": 76,
-    "title": "Hambúrguer Gourmet Noturno",
-    "category": "Lanches",
-    "tags": [
-      "externa",
-      "corpo inteiro",
-      "editorial"
-    ],
-    "prompt": "Retrato noturno de hambúrguer gourmet, atmosfera intimista, capturado com lente 50mm f/1.8 e luz suave difusa. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-76.jpg",
-    "attachments": [
-      {
-        "id": "76-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-76-ref-1.jpg"
-      }
-    ]
-  },
-  {
-    "id": 77,
-    "title": "Campanha de Marca Golden Hour",
-    "category": "Anúncios",
-    "tags": [
-      "preto e branco",
-      "produto",
-      "retrato"
-    ],
-    "prompt": "Retrato golden hour de campanha de marca, clima editorial de revista, capturado com lente 35mm e iluminação dramática lateral. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-77.jpg",
-    "attachments": []
-  },
-  {
-    "id": 78,
-    "title": "Retrato Casual Premium",
-    "category": "Masculino",
-    "tags": [
-      "colorido",
-      "lifestyle",
-      "moda"
-    ],
-    "prompt": "Retrato premium de retrato casual, estética cinematográfica, capturado com grande angular 24mm e golden hour quente. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-78.jpg",
-    "attachments": []
-  },
-  {
-    "id": 79,
-    "title": "Lifestyle Casual Contemplativo",
-    "category": "Feminino",
-    "tags": [
-      "close-up",
-      "cinematográfico",
-      "estúdio"
-    ],
-    "prompt": "Retrato contemplativo de lifestyle casual, vibe minimalista e clean, capturado com teleobjetiva 135mm e luz de neon ciano e magenta. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-79.jpg",
-    "attachments": [
-      {
-        "id": "79-1",
-        "alt": "Referência 1",
-        "image": "/imagens/referencias/prompt-79-ref-1.jpg"
-      },
-      {
-        "id": "79-2",
-        "alt": "Referência 2",
-        "image": "/imagens/referencias/prompt-79-ref-2.jpg"
-      }
-    ]
-  },
-  {
-    "id": 80,
-    "title": "Retrato Artístico Clássico",
-    "category": "Ensaio Fotográfico",
-    "tags": [
-      "corpo inteiro",
-      "editorial",
-      "externa"
-    ],
-    "prompt": "Retrato clássico de retrato artístico, tom dramático e misterioso, capturado com lente 85mm f/1.4 e chiaroscuro de alto contraste. Composição cuidadosa, cores ricas e profundidade de campo rasa, fundo desfocado com bokeh suave. Qualidade fotográfica profissional, 4k, altamente detalhado, foco nítido nos olhos. --ar 3:4 --style raw",
-    "image": "/imagens/capas/prompt-80.jpg",
-    "attachments": []
-  }
+      "attachments": [
+        {
+          "id": "1-1",
+          "alt": "Referência 1",
+          "image": "/imagens/referencias/prompt-14-ref-1.jpeg"
+        },
+      ]
+    }
+]
+
+// Categorias do filtro, geradas automaticamente a partir dos prompts.
+// "Todos" sempre primeiro; as demais na ordem de primeira aparição nos dados.
+export const categories = [
+  "Todos",
+  ...Array.from(new Set(prompts.map((p) => p.category).filter(Boolean))),
 ]

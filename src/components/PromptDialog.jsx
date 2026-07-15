@@ -9,6 +9,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import PromptImage from '@/components/PromptImage'
+import CreditClaimDialog from '@/components/CreditClaimDialog'
 import { LOREM } from '@/data/prompts'
 import { useAuth } from '@/context/AuthContext'
 import { usePlans } from '@/context/PlansContext'
@@ -40,7 +41,7 @@ function PromptDialog({ prompt, open, onOpenChange, onCopy }) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[90vh] gap-0 overflow-y-auto p-0 sm:max-w-3xl">
+      <DialogContent className="max-h-[90vh] gap-0 overflow-y-auto p-0 sm:max-w-5xl">
         <div className="grid gap-0 sm:grid-cols-2">
           <div className="aspect-[3/4] overflow-hidden bg-muted sm:aspect-auto">
             <PromptImage src={prompt.image} alt={prompt.title} />
@@ -103,10 +104,10 @@ function PromptDialog({ prompt, open, onOpenChange, onCopy }) {
               <div className="mt-5">
                 <div className="flex items-center gap-2 text-sm font-medium">
                   <Paperclip className="h-4 w-4 text-primary" />
-                  Imagens de referência necessárias
+                  Imagens de referência
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  Anexe {prompt.attachments.length === 1 ? 'esta imagem' : 'estas imagens'} junto com o prompt na sua ferramenta de IA.
+                  {prompt.attachments.length === 1 ? 'Imagem' : 'Imagens'} base e/ou anexo para geração de nova imagem.
                 </p>
                 <div className="mt-3 grid grid-cols-3 gap-2">
                   {prompt.attachments.map((att) => (
@@ -120,6 +121,24 @@ function PromptDialog({ prompt, open, onOpenChange, onCopy }) {
                     </div>
                   ))}
                 </div>
+              </div>
+            )}
+
+            {prompt.credit ? (
+              <p className="mt-4 text-xs text-muted-foreground">
+                Crédito:{' '}
+                <a
+                  href={prompt.credit.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline underline-offset-2 hover:text-primary/80"
+                >
+                  {prompt.credit.site}
+                </a>
+              </p>
+            ) : (
+              <div className="mt-4">
+                <CreditClaimDialog promptId={prompt.id} promptTitle={prompt.title} />
               </div>
             )}
 
